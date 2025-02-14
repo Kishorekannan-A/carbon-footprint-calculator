@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint Result</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Carbon Footprint Calculation Result</h1>
+    <h2>Your Estimated Carbon Footprint: <span id="result">0</span> kg CO2</h2>
+    <button class="small-button" onclick="window.location.href = 'index.html'">Calculate Again</button>
+
+
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const carbonFootprint = urlParams.get('carbonFootprint');
+        if (carbonFootprint) {
+            document.getElementById('result').textContent = carbonFootprint;
+        } else {
+            document.getElementById('result').textContent = "No data available.";
+        }
+    </script>
+
+</body>
+</html>
